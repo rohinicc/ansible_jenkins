@@ -7,11 +7,11 @@ pipeline{
         stage('pull for git repo'){
             steps{
                 git_branch = 'main'
-                git url:'https://github.com/rohinicc/ansible_jenkins'
+                url:'https://github.com/rohinicc/ansible_jenkins'
             }
             steps{
                 sh """
-                su - ansible -c "ansible-playbook playbook.yml"               
+                su - ansible -c "ansible-playbook -i 172.31.5.196 playbook.yml"               
                 """
             }
         }
