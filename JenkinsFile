@@ -7,7 +7,7 @@ pipeline{
         stage('pull for git repo'){
             steps{
                 git_branch = 'main'
-                git url:'https://github.com/rohinicc/ansible_jenkins.git'
+                git url:'https://github.com/rohinicc/ansible_jenkins'
             }
             steps{
                 sh """
