@@ -7,7 +7,11 @@ pipeline{
         stage('pull for git repo'){
             steps{
                 git_branch = 'main'
+<<<<<<< HEAD
                 url:'https://github.com/rohinicc/ansible_jenkins'
+=======
+                git url:'https://github.com/rohinicc/ansible_jenkins'
+>>>>>>> 544bb670e8140fd097c9c2b62a79af573df702a9
             }
             steps{
                 sh """
