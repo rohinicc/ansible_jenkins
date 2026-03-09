@@ -1,10 +1,19 @@
 pipeline{
-    agent {
-        label 'slave'
+    agent any
+    environment{
+        ANSIBLE_HOST_KEY_CHECKING = 'False'
     }
     stages{
         stage('pull for git repo'){
-            
+            steps{
+                git_branch = 'main'
+                git url:'https://github.com/rohinicc/ansible_jenkins.git'
+            }
+            steps{
+                sh """
+                su - ansible -c "ansible-playbook playbook.yml"               
+                """
+            }
         }
     }
 }
